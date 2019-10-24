@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>We need your email</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="particles.js/particles.js"></script>
+
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <!-- Material form subscription -->
+    <div id="wrapper" class="modal-dialog-centered">
+        <div id="inner" class="container">
+            <div class="card">
+
+                <h5 class="card-header info-color white-text text-center py-4">
+                    <% if(email == undefined){ %>
+                        <strong>Are you ready to get involved?</strong>
+                    <% } else { %>
+                        <strong>Thank you for being indifferent!</strong>
+                    <% } %>
+                </h5>
+
+                <!--Card content-->
+                <div class="card-body px-lg-5">
+
+                    <!-- Form -->
+                    <form class="text-center" style="color: #757575;" method="POST" action="/new">
+
+                        <p>We promise not to share your email with anyone</p>
+
+                        <!-- E-mai -->
+                        <% if(email == undefined){ %>
+                            <div class="md-form">
+                                <input name="email" type="email" id="materialSubscriptionFormEmail" class="form-control" placeholder="Email">
+                            </div>
+                            <!-- Sign in button -->
+                            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
+                        <% } else { %>
+                            <div class="md-form">
+                                <input disabled type="email" id="materialSubscriptionFormEmail" class="form-control" placeholder="<%= email %>">
+                            </div>
+                        <% } %>
+
+                    </form>
+                    <!-- Form -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Material form subscription -->
+
+    <script>
+        particlesJS.load('particles-js', 'particlesjs-config.json');
+    </script>
+
+    <!--<script type="text/javascript" src="app.js"></script>-->
+</body>
+</html>
